@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   get 'basic/fibonacci', to: 'basic#fibonacci'
   get 'basic/boom', to: 'basic#boom'
 
+  get 'search', to: 'search#index'
+
   # Job test scenarios
   post 'jobs', to: 'jobs#create'
 end
