@@ -33,6 +33,19 @@ variables:
     DD_RELENV_DDTRACE_COMMIT_ID: $CI_COMMIT_SHORT_SHA
     K6_RUN_ID_PREFIX: ci_rb
     KUBERNETES_SERVICE_ACCOUNT_OVERWRITE: dd-trace-rb
+
+    K6_OPTIONS_NORMAL_OPERATION_RATE: 30
+    K6_OPTIONS_NORMAL_OPERATION_DURATION: 10m
+    K6_OPTIONS_NORMAL_OPERATION_GRACEFUL_STOP: 1m
+    K6_OPTIONS_NORMAL_OPERATION_PRE_ALLOCATED_VUS: 4
+    K6_OPTIONS_NORMAL_OPERATION_MAX_VUS: 4
+
+    K6_OPTIONS_HIGH_LOAD_RATE: 200
+    K6_OPTIONS_HIGH_LOAD_DURATION: 5m
+    K6_OPTIONS_HIGH_LOAD_GRACEFUL_STOP: 30s
+    K6_OPTIONS_HIGH_LOAD_PRE_ALLOCATED_VUS: 4
+    K6_OPTIONS_HIGH_LOAD_MAX_VUS: 4
+
   # Workaround: Currently we're not running the benchmarks on every PR, but GitHub still shows them as pending.
   # By marking the benchmarks as allow_failure, this should go away. (This workaround should be removed once the
   # benchmarks get changed to run on every PR)
