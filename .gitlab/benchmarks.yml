@@ -51,17 +51,17 @@ variables:
   # benchmarks get changed to run on every PR)
   allow_failure: true
 
-baseline-benchmarks:
+baseline:
   extends: .benchmarks
   variables:
     DD_BENCHMARKS_CONFIGURATION: baseline
 
-only-tracing-benchmarks:
+only-tracing:
   extends: .benchmarks
   variables:
     DD_BENCHMARKS_CONFIGURATION: only-tracing
 
-only-profiling-benchmarks:
+only-profiling:
   extends: .benchmarks
   variables:
     DD_BENCHMARKS_CONFIGURATION: only-profiling
@@ -72,35 +72,35 @@ only-profiling-benchmarks:
     # better accuracy, mode.
     DD_PROFILING_NO_SIGNALS_WORKAROUND_ENABLED: "false"
 
-only-profiling-timeline-benchmarks:
+only-profiling-timeline:
   extends: .benchmarks
   variables:
-    DD_BENCHMARKS_CONFIGURATION: only-profiling-timeline
+    DD_BENCHMARKS_CONFIGURATION: only-profiling
     DD_PROFILING_ENABLED: "true"
     DD_PROFILING_NO_SIGNALS_WORKAROUND_ENABLED: "false"
     DD_PROFILING_EXPERIMENTAL_TIMELINE_ENABLED: "true"
 
-profiling-and-tracing-benchmarks:
+profiling-and-tracing:
   extends: .benchmarks
   variables:
     DD_BENCHMARKS_CONFIGURATION: profiling-and-tracing
     DD_PROFILING_ENABLED: "true"
     DD_PROFILING_NO_SIGNALS_WORKAROUND_ENABLED: "false"
 
-tracing-and-appsec-benchmarks:
+tracing-and-appsec:
   extends: .benchmarks
   variables:
     DD_BENCHMARKS_CONFIGURATION: tracing-and-appsec
     DD_APPSEC_ENABLED: "true"
 
-tracing-and-appsec-and-no-remote-configuration-benchmarks:
+tracing-and-appsec-and-no-remote-configuration:
   extends: .benchmarks
   variables:
     DD_BENCHMARKS_CONFIGURATION: tracing-and-appsec-and-no-remote-configuration
     DD_APPSEC_ENABLED: "true"
     DD_REMOTE_CONFIGURATION_ENABLED: "false"
 
-profiling-and-tracing-and-appsec-benchmarks:
+profiling-and-tracing-and-appsec:
   extends: .benchmarks
   variables:
     DD_BENCHMARKS_CONFIGURATION: profiling-and-tracing-and-appsec
@@ -108,10 +108,10 @@ profiling-and-tracing-and-appsec-benchmarks:
     DD_PROFILING_ENABLED: "true"
     DD_PROFILING_NO_SIGNALS_WORKAROUND_ENABLED: "false"
 
-profiling-and-tracing-and-appsec-timeline-benchmarks:
+profiling-and-tracing-and-appsec-timeline:
   extends: .benchmarks
   variables:
-    DD_BENCHMARKS_CONFIGURATION: profiling-and-tracing-and-appsec-timeline
+    DD_BENCHMARKS_CONFIGURATION: profiling-and-tracing-and-appsec
     DD_APPSEC_ENABLED: "true"
     DD_PROFILING_ENABLED: "true"
     DD_PROFILING_NO_SIGNALS_WORKAROUND_ENABLED: "false"
