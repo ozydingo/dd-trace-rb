@@ -192,6 +192,7 @@ end
 appraise 'sinatra' do
   gem 'sinatra', '< 3.0'
   gem 'mustermann', '< 3.0'
+  gem 'rack-contrib'
   gem 'rack-test'
 end
 
