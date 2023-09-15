@@ -13,12 +13,6 @@ gem 'benchmark-ips', '~> 2.8'
 gem 'benchmark-memory', '< 0.2' # V0.2 only works with 2.5+
 gem 'builder'
 gem 'climate_control', '~> 0.2.0'
-# Leave it open as we also have it as an integration and want Appraisal to control the version under test.
-if RUBY_VERSION >= '2.2.0'
-  gem 'concurrent-ruby'
-else
-  gem 'concurrent-ruby', '< 1.1.10'
-end
 gem 'extlz4', '~> 0.3', '>= 0.3.3' if RUBY_PLATFORM != 'java' # Used to test lz4 compression done by libdatadog
 gem 'json', '< 2.6' if RUBY_VERSION < '2.3.0'
 gem 'json-schema', '< 3' # V3 only works with 2.5+
