@@ -62,6 +62,8 @@ module Datadog
           return
         end
 
+        require 'datadog/kit/enable_core_dumps'
+
         # Load extensions needed to support some of the Profiling features
         Profiling::Tasks::Setup.new.run
 
